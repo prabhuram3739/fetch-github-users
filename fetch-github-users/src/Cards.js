@@ -1,24 +1,20 @@
 import React from 'react';
 import CardUI from './CardUI';
+import './Cards.css';
 
-function Cards(allRepos) {
-    console.log("Response from Cards page:", allRepos);
+function Cards({details}) {
+    console.log("Response from Cards page:", details);
     return (
         <div className="container-fluid d-flex justify-content-center">
             <div className="row">
-                <div className="col-md-3">
-                    <CardUI />
+            {/* Displaying the cards from the CardsUI component with the users data response */}
+            {details.map((user) => (
+                <div key={user.id} className="marginTopAlign col-md-3">
+                    <CardUI user={user} />
                 </div>
-                <div className="col-md-3">
-                    <CardUI />
-                </div>
-                <div className="col-md-3">
-                    <CardUI />
-                </div>
-                <div className="col-md-3">
-                    <CardUI />
-                </div>
+            ))}
             </div>
+
         </div>
     )
 }

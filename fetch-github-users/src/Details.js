@@ -1,22 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import "./Details.css";
-import axios from 'axios';
 import Cards from './Cards';
+import useUsers from './usersHook';
 
 function Details() {
     let allRepos = "";
-    useEffect(() => {
-        //setAppState({ loading: true });
-        const apiUrl = 'https://api.github.com/repos/facebook/react/forks';
-        axios.get(apiUrl).then((repos) => {
-          allRepos = repos.data;
-          //console.log(allRepos);
-          //setAppState({ loading: false, repos: allRepos });
-          return allRepos;
-        });
-      }, []);
+    allRepos = useUsers();
     return (
         <div className="displayPage">
+        <h4 className="blackHeading">Git Repo Users for Facebook React</h4>
             <Cards details={allRepos} />
         </div>
     )
