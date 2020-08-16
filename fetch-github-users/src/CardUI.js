@@ -1,8 +1,12 @@
 import React from 'react';
 import './CardUI.css';
 import { followApiEndPoint } from './apiConfig';
+//import followUsers from './followUsersHook';
 
 function CardUI(user) {
+    let allRepos = "";
+    //let followUsersAPI = followApiEndPoint+user.user.owner.login;
+    //allRepos = followUsers(user.user.owner.login);
     return (
         <div className="card text-center shadow roundedCards">
             <div className="overflow">
@@ -13,7 +17,8 @@ function CardUI(user) {
                 <p className="card-text text-secondary">
                     {user.user.full_name}
                 </p>
-                <a href="#" className="btn btn-primary">Follow</a>
+                {/*<button className="btn btn-primary" onClick={allRepos.data}>Follow</button>*/}
+                <button className="btn btn-primary">Follow</button>
             </div>
         </div>  
     )

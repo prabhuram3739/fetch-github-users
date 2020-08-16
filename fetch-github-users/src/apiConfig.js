@@ -10,7 +10,7 @@ export const apiEndpoint = "https://api.github.com/repos";
 const gitRepo = "facebook/react";
 
 //Follow a user API
-export const followApiEndPoint = "https://api.github.com/user/following/";
+//export const followApiEndPoint = "https://api.github.com/user/following/";
 
 //Get the access token from the response
 export const getTokenFromUrl = () => {
@@ -26,4 +26,4 @@ export const getTokenFromUrl = () => {
 };
 
 export const authGitUrl = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&login=prabhuram3739&scope=${scopes.join("%20")}&state=test&allow_signup=true`;
-export const fetchUsersApi = `${apiEndpoint}/${gitRepo}/forks`;
+export const fetchUsersApi = `${apiEndpoint}/${gitRepo}/forks?client_id=${clientId}`;
